@@ -38,6 +38,7 @@ class PostController extends Controller
         $post = new Post();
 
         $post->title = $request->input('title');
+        $post->image = $request->input('image');
         $post->slug = $request->input('slug');
         $post->description = $request->input('description');
         $post->content = $request->input('content');
