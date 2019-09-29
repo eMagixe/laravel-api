@@ -23,4 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts', 'PostController@index');
 Route::get('/post/{id}', 'PostController@show');
 Route::post('/create/post', 'PostController@store');
+Route::post('/update/{id}', 'PostController@update');
 Route::delete('/post/{id}', 'PostController@destroy');

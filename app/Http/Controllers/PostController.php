@@ -76,9 +76,17 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request  $request, $id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->title = $request->input('title');
+        $post->image = $request->input('image');
+        $post->slug = $request->input('slug');
+        $post->description = $request->input('description');
+        $post->content = $request->input('content');
+
+        $post->save();
     }
 
     /**
